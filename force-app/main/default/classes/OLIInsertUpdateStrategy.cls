@@ -8,8 +8,6 @@ public with sharing class OLIInsertUpdateStrategy implements IOLIStrategy{
         for (Order_Line_Item__c oli : newList) {
             salesOrderIds.add(oli.Sales_Order__c);
         }
-
-        System.debug('OLIInsertUpdateStrategy is here, salesOrderIds: ' + salesOrderIds);
         
         uow.registerSalesOrdersForRecalculation(salesOrderIds);
     }

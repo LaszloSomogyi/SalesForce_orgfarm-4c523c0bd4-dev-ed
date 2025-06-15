@@ -9,8 +9,6 @@ public with sharing class OLIAfterDeleteStrategy implements IOLIStrategy {
             salesOrderIds.add(oli.Sales_Order__c);
         }
 
-        System.debug('OLIAfterDeleteStrategy is here, salesOrderIds: ' + salesOrderIds);
-
         uow.registerSalesOrdersForRecalculation(salesOrderIds);
     }
 }

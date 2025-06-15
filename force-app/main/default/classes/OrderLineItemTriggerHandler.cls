@@ -10,9 +10,6 @@ public with sharing class OrderLineItemTriggerHandler {
         IOLIStrategy strategy = OLIStrategyFactory.getStrategy(operation);
         OrderUnitOfWork uow = new OrderUnitOfWork();
 
-        System.debug('TriggerHandler is here, stratey: ' + strategy);
-
-
         strategy.apply(newList, oldList, newMap, oldMap, uow);
         uow.applyChanges();
     }

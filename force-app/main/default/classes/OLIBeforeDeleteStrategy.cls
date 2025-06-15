@@ -18,7 +18,5 @@ public with sharing class OLIBeforeDeleteStrategy implements IOLIStrategy {
             }
         }
 
-        System.debug('OLIBeforeDeleteStrategy is here, salesOrderIds: ' + salesOrderIds);
-
     }
 }

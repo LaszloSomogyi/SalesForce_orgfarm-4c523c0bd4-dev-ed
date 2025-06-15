@@ -14,9 +14,6 @@ public with sharing class OrderUnitOfWork {
             FROM Sales_Order__c WHERE Id IN :orderIds
         ];
 
-        System.debug('OrderUnitOfWork is here, ordersToUpdate: ' + ordersToUpdate);
-
-
         SalesOrderCalculator.recalculateSalesOrders(ordersToUpdate);
         update ordersToUpdate;
     }
