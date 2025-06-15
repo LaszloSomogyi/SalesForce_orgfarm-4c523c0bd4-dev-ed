@@ -13,8 +13,6 @@ trigger OrderLineItemTrigger on Order_Line_Item__c (before delete, after insert,
         }
     }
 
-    System.debug('Trigger is here, operation: ' + operation);
-
     new OrderLineItemTriggerHandler().runTrigger(
         Trigger.new,
         Trigger.old,
